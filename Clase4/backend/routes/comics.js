@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dbPromise = require('../db');
-const Comic = require('../models/Comic');
+const Comic = require('../models/comic');
 
 // Get all comics
 router.get('/', async (req, res) => {

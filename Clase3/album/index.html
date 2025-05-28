@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir fotos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Mackflog</h1>
+
+        <div id="images-container">
+        </div>
+
+        <h2>Subir fotos</h2>
+        <form id="upload-form">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title"><br><br>
+            <div class="drop-zone">
+                <p>Arrastra y suelta tu foto aquí o haz clic para seleccionar</p>
+                <input type="file" id="file-input" name="file" accept="image/*">
+                <input type="hidden" id="imageBase64" name="imageBase64">
+                <img id="preview" src="" alt="Imagen previa">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Drag and drop
+        const dropZone = document.querySelector('.drop-zone');
+        const fileInput = document.querySelector('#file-input');
+        const preview = document.querySelector('#preview');
+        const imageBase64 = document.querySelector('#imageBase64');
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('hover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('hover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const files = e.dataTransfer.files;
+            fileInput.files = files;
+            dropZone.classList.remove('hover');
+            previewImage();
+        });
+
+        fileInput.addEventListener('change', () => {
+            previewImage();
+        });
+
+        function previewImage() {
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = (e) => {
+                preview.src = e.target.result;
+                imageBase64.value = e.target.result
+            };
+            reader.readAsDataURL(file);
+        }
+    </script>
+</body>
+</html>

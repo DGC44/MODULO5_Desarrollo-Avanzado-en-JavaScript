@@ -27,8 +27,12 @@ function updateOrderStatus(order, status) {
     const listItem = document.getElementById(`order-${order.id}`);
     if (listItem) {
         listItem.textContent = `Pedido #${order.id}: ${order.product} - ${status}`;
+        if (status === 'Completado') {
+            listItem.classList.add('completed');
+        }
     }
 }
+
 
 // Simula la preparación usando setTimeout y Promise
 function prepareOrder(order) {

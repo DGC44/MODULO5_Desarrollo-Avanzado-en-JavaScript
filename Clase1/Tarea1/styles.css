@@ -1,0 +1,129 @@
+/* Colores rústicos, cálidos y madera */
+
+:root {
+    --color-fondo: #f5efe6;        /* beige claro */
+    --color-madera: #7b4f24;       /* marrón madera */
+    --color-acento: #b87f3a;       /* naranja quemado */
+    --color-texto: #3e2f1c;        /* café oscuro */
+    --color-boton: #a16c2f;        /* marrón medio */
+    --color-boton-hover: #b87f3a;  /* naranja quemado */
+    --color-lista-fondo: #f9f4ee;  /* beige más claro */
+    --color-lista-border: #d1b78c; /* marrón claro */
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px var(--color-madera);
+    letter-spacing: 2px;
+}
+
+/* Contenedor general para inputs y botones */
+
+label, select, button {
+    font-size: 1.1rem;
+    margin: 10px 5px 20px 5px;
+    vertical-align: middle;
+}
+
+/* Select estilo rústico */
+
+select {
+    padding: 8px 12px;
+    border: 2px solid var(--color-madera);
+    border-radius: 8px;
+    background-color: var(--color-lista-fondo);
+    color: var(--color-texto);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px #d4b57f;
+    transition: border-color 0.3s ease;
+}
+
+select:hover, select:focus {
+    border-color: var(--color-acento);
+    outline: none;
+}
+
+/* Botón con estilo café rústico */
+
+button {
+    background-color: var(--color-boton);
+    color: var(--color-fondo);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 2px 4px 6px #6b4a1c;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--color-boton-hover);
+    transform: scale(1.05);
+}
+
+/* Lista de pedidos */
+
+ul#orderList {
+    list-style-type: none;
+    padding: 0;
+    width: 320px;
+    max-width: 150vw;
+    background-color: var(--color-lista-fondo);
+    border: 2px solid var(--color-lista-border);
+    border-radius: 12px;
+    box-shadow: 3px 4px 10px #cbb58a;
+    min-height: 200px;
+}
+
+/* Cada pedido en la lista */
+
+ul#orderList li {
+    padding: 12px 15px;
+    margin: 8px 12px;
+    border-left: 6px solid var(--color-madera);
+    background-color: #fffaf0;
+    font-weight: 600;
+    box-shadow: 1px 2px 3px #d7c2a2;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+/* Cambia el borde cuando el pedido está completado */
+
+ul#orderList li::before {
+    content: "🌰";
+    margin-right: 6px;
+}
+
+ul#orderList li.completed {
+    border-left-color: var(--color-acento);
+    background-color: #fff7e6;
+    color: var(--color-madera);
+    font-weight: 700;
+}
+
+/* Mensaje cuando no hay pedidos */
+
+ul#orderList:empty::before {
+    content: "No hay pedidos todavía.";
+    display: block;
+    text-align: center;
+    color: var(--color-madera);
+    font-style: italic;
+    margin-top: 20px;
+}

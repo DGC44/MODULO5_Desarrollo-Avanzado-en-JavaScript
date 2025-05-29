@@ -102,17 +102,27 @@ h1 {
 
 /* Texto del planeta */
 .planeta h3 {
-  margin: 0 0 10px 0;
+  margin: 0 0 12px 0;
   font-size: 1.8rem;
   color: #00fff2;
-  text-shadow: 0 0 8px #00fff2;
+  text-shadow: 0 0 6px #00d6cc;
 }
 
 .planeta p {
-  margin: 4px 0;
+  margin: 8px 0;
   font-size: 1.1rem;
-  color: #b2fefa;
-  line-height: 1.4;
+  color: #a3f4ec;
+  line-height: 1.6;
+}
+
+/* Imagen con tamaño uniforme */
+.planeta img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #00d6cc;
+  box-shadow: 0 0 10px #00d6cc;
 }
 
 /* Responsive */

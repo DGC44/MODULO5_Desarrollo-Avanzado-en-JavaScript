@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
         <link rel="stylesheet" href="/styles.css" />
       </head>
       <body>
-        <h1>Exploración Espacial - Registro de Planetas</h1>
+        <h1>Exploración Espacial - Planetas</h1>
   `;
 
   function crearSeccion(nombre, lista) {

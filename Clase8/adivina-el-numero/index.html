@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina El Número</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Adivina El Número</h1>
+    <p>La computadora ha generado un número entre 1 y 100.</p>
+    <h2>¡Adivínalo!</h2>
+    <button id="mostrar-info">ℹ️ ¿Cómo se juega?</button>
+    <div id="info-puntos" style="display: none;">
+      <h2>¿Cómo funciona el sistema de puntuación? </h2>
+      <ul>
+        <li>🎯 Adivinas en 1 intento: <strong>+10 puntos</strong> y logro especial "¡Maestro adivinador!"</li>
+        <li>✅ Adivinas en 2-5 intentos: <strong>+10 puntos</strong></li>
+        <li>⏱️ Adivinas en más de 5 intentos: <strong>+5 puntos</strong></li>
+        <li>❌ No adivinas en 10 intentos: <strong>-5 puntos</strong></li>
+        <li>🔥 Si ganas 3 veces seguidas: desbloqueas el logro "¡Buena racha!"</li>
+      </ul>
+    </div>
+    <input type="number" id="numero">
+    <button id="adivinar">Adivinar</button>
+    <button id="reiniciar">🔄 Reiniciar</button>
+    <p id="mensaje"></p>
+    <p id="puntos">Puntos: 0</p>
+    <p id="racha">Racha de victorias: 0</p>
+    <p id="logro"></p>
+
+    <div id="vidas-container">
+  <label>💖 Vidas restantes:</label>
+  <div id="vidas-barra">
+    <div id="vidas-relleno"></div>
+  </div>
+  </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

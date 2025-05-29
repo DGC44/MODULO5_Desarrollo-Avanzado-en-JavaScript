@@ -1,0 +1,183 @@
+/* Fondo general */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e3f;
+  color: #ffffff;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Título */
+h1 {
+  font-size: 2rem;
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #ffd700;
+  font-size: 1rem;
+  margin-top: 0rem;
+  text-align: center;
+  padding: 0;
+}
+
+/* Contenedor principal */
+#juego {
+  background-color: #2d2d5a;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Input y botones */
+input[type="number"] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid #00ff99;
+  border-radius: 8px;
+  background-color: #121232;
+  color: #fff;
+  width: 100px;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 10px;
+  background-color: #00ff99;
+  color: #121232;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #00cc7a;
+  transform: scale(1.05);
+}
+
+/* Mensajes */
+#mensaje, #puntos, #racha, #logro {
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+#mensaje {
+  color: #fff;
+  text-shadow: 0 0 4px #00ffcc;
+}
+
+#logro {
+  color: #ffcc00;
+  font-size: 1.2rem;
+  text-shadow: 0 0 5px #ffcc00;
+}
+
+/* Sección de reglas */
+#info-puntos {
+  background-color: #29295a;
+  padding: 15px;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffd700;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+#info-puntos ul {
+  list-style-type: none;
+ 
+}
+
+#info-puntos li {
+  margin-bottom: 8px;
+}
+
+/* Botón "¿Cómo se juega?" */
+#mostrar-info {
+  background-color: #ffd700;
+  color: #1e1e3f;
+  font-weight: bold;
+}
+
+#vidas-barra {
+  background: linear-gradient(90deg, #222244, #000011);
+  border: 3px solid #00ffcc;
+  border-radius: 15px;
+  height: 30px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 2px;
+  box-shadow: 0 0 15px #00ffcc;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3rem;
+}
+
+#vidas-relleno {
+  background: linear-gradient(90deg, #ff4d4d, #ff0000);
+  height: 100%;
+  width: 100%; /* Se actualiza con JS */
+  border-radius: 15px 0 0 15px;
+  box-shadow: 0 0 10px #ff4d4d, inset 0 0 5px #ff0000;
+  transition: width 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto brillo animado en la barra */
+#vidas-relleno::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.3)
+  );
+  transform: skewX(-25deg);
+  animation: brillo 2s linear infinite;
+}
+
+@keyframes brillo {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#mensaje.animar, #logro.animar {
+  animation: popup 0.6s ease forwards;
+}
